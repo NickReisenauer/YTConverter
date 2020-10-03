@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/tailwind.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Top gradient bar -->
+    <div
+      class="h-1 bg-gradient-to-r from-indigo-400 via-indigo-600 to-indigo-700 max-w-sm mx-auto rounded-tr-full rounded-tl-full mt-5"
+    ></div>
+    <!-- /Top gradient bar -->
+
+    <!-- Card -->
+    <div
+      class="border bg-white border-gray-300 shadow rounded-md p-4 max-w-sm mx-auto rounded-tr-none rounded-tl-none border-t-0"
+    >
+      <!-- Heading -->
+      <h1 class="text-center text-gray-700 text-2xl font-bold mb-5">
+        Input YouTube Link
+      </h1>
+      <!-- /Heading -->
+
+      <!-- Input Form -->
+      <form>
+        <div class="relative flex w-full flex-wrap items-center mb-3">
+          <span
+            class="z-10 font-normal text-center text-gray-500 absolute bg-transparent rounded items-center justify-center w-8 pl-3 py-2"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
+              />
+            </svg>
+          </span>
+          <input
+            type="text"
+            placeholder="YouTube Link"
+            class="px-3 py-2 placeholder-gray-500 text-gray-700 shadow-sm relative rounded-lg text-sm border border-rounded-sm border-gray-400 outline-none focus:outline-none focus:shadow-outline w-full pl-10"
+          />
+        </div>
+        <!-- Button with leading icon-->
+        <button
+          class="flex items-center px-4 py-2 mt-4 pl-3 w-full justify-center rounded-lg shadow-lg bg-indigo-600 text-white font-bold focus:outline-none focus:shadow-outline hover:bg-indigo-500 active:bg-indigo-700"
+        >
+          <svg
+            style="width: 22px; height: 22px"
+            viewBox="0 0 24 24"
+            class="mr-2"
+          >
+            <path
+              fill="currentColor"
+              d="M12,6V9L16,5L12,1V4A8,8 0 0,0 4,12C4,13.57 4.46,15.03 5.24,16.26L6.7,14.8C6.25,13.97 6,13 6,12A6,6 0 0,1 12,6M18.76,7.74L17.3,9.2C17.74,10.04 18,11 18,12A6,6 0 0,1 12,18V15L8,19L12,23V20A8,8 0 0,0 20,12C20,10.43 19.54,8.97 18.76,7.74Z"
+            />
+          </svg>
+          Convert
+        </button>
+        <!-- /Button with leading icon -->
+      </form>
+      <!-- Input Form -->
+    </div>
+    <!-- /Card -->
+  </body>
+</html>
