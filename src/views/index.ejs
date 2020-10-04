@@ -24,7 +24,7 @@
       <!-- /Heading -->
 
       <!-- Input Form -->
-      <form>
+      <form action="/download" method="POST">
         <div class="relative flex w-full flex-wrap items-center mb-3">
           <span
             class="z-10 font-normal text-center text-gray-500 absolute bg-transparent rounded items-center justify-center w-8 pl-3 py-2"
@@ -45,12 +45,15 @@
           </span>
           <input
             type="text"
+            name="url"
+            required
             placeholder="YouTube Link"
-            class="px-3 py-2 placeholder-gray-500 text-gray-700 shadow-sm relative rounded-lg text-sm border border-rounded-sm border-gray-400 outline-none focus:outline-none focus:shadow-outline w-full pl-10"
+            class="px-3 py-2 placeholder-gray-500 text-gray-700 shadow-sm relative rounded-lg text-md border border-rounded-sm border-gray-400 outline-none focus:outline-none focus:shadow-outline w-full pl-10"
           />
         </div>
         <!-- Button with leading icon-->
         <button
+          type="submit"
           class="flex items-center px-4 py-2 mt-4 pl-3 w-full justify-center rounded-lg shadow-lg bg-indigo-600 text-white font-bold focus:outline-none focus:shadow-outline hover:bg-indigo-500 active:bg-indigo-700"
         >
           <svg
