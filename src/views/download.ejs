@@ -38,7 +38,10 @@
       <!-- /Channel name -->
 
       <!-- Button with leading icon-->
-      <button
+
+      <a
+        href="./tmp/<%= video.title %>.mp3"
+        download
         class="flex items-center px-4 py-2 mt-4 pl-3 w-full justify-center rounded-lg shadow-lg bg-indigo-600 text-white font-bold focus:outline-none focus:shadow-outline hover:bg-indigo-500 active:bg-indigo-700"
       >
         <svg
@@ -46,7 +49,7 @@
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
-          class="w-5 h-5 mr-2"
+          class="w-5 h-5 mr-2 z-10"
         >
           <path
             stroke-linecap="round"
@@ -55,8 +58,9 @@
             d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
           />
         </svg>
-        Download
-      </button>
+        Download</a
+      >
+
       <!-- /Button with leading icon -->
     </div>
     <!-- /Card component -->

@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const ytdl = require("ytdl-core");
+const convert = require("./convert");
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
@@ -19,13 +20,12 @@ app.post("/download", async (req, res) => {
     owner: info.videoDetails.ownerChannelName,
     videoID: info.videoDetails.videoId,
   };
+  convert(req.body.url, video.title, video.videoID);
   res.render("download.ejs", { video });
-});
-
-app.get("/download/:id", (req, res) => {
-  res.send(req.params.id);
 });
 
 app.listen(process.env.PORT || 3000, () => {
   console.log(`Listening on: ${process.env.PORT || 3000}`);
 });
+
+module.exports = app;
