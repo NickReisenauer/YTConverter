@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/index.js"
   },
   "author": "Nick Reisenauer",
   "license": "ISC",
@@ -13,6 +14,7 @@
     "ejs": "^3.1.5",
     "express": "^4.17.1",
     "fluent-ffmpeg": "^2.1.2",
+    "remove-route-runtime": "^1.0.1",
     "tailwindcss": "^1.8.10",
     "ytdl-core": "^3.3.0"
   }

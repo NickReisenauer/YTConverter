@@ -2,7 +2,6 @@ const ytdl = require("ytdl-core");
 const ffmpegPath = require("@ffmpeg-installer/ffmpeg").path;
 const ffmpeg = require("fluent-ffmpeg");
 ffmpeg.setFfmpegPath(ffmpegPath);
-const app = require("./index");
 
 const convert = async (url, title, videoID) => {
   const promisifyCommand = (command) => {
@@ -24,3 +23,5 @@ const convert = async (url, title, videoID) => {
 };
 
 module.exports = convert;
+
+// https://www.youtube.com/watch?v=Ef_Mmevd8dg
