@@ -76,3 +76,16 @@
     <!-- /Card -->
   </body>
 </html>
+
+<style>
+  .rotateIcon {
+    transform: rotate(360deg);
+    transition: all 1s;
+  }
+</style>
+
+<script>
+  document.querySelector("button").addEventListener("click", () => {
+    document.querySelector("#convertIcon").classList.toggle("rotateIcon");
+  });
+</script>

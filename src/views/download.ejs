@@ -44,7 +44,7 @@
         id="downloadLink"
         href="./tmp/<%= video.title %>.mp3"
         download
-        class="flex items-center px-4 py-2 mt-4 pl-3 w-full mb-6 justify-center rounded-lg shadow-lg bg-indigo-600 text-white font-bold focus:outline-none focus:shadow-outline hover:bg-indigo-500 active:bg-indigo-700"
+        class="flex items-center px-4 py-2 mt-4 pl-3 w-full mb-5 justify-center rounded-lg shadow-lg bg-indigo-600 text-white font-bold focus:outline-none focus:shadow-outline hover:bg-indigo-500 active:bg-indigo-700"
       >
         <svg
           id="downloadIcon"
@@ -64,12 +64,43 @@
         <i class="gg-spinner-two-alt mr-2" id="loadingIcon"></i>
         Download</a
       >
-      <a
-        href="/"
-        class="bg-white hover:bg-gray-100 text-gray-800 rounded-lg w-2/5 text-sm text-center font-semibold justify-center flex m-auto py-1 px-2 border border-gray-400 shadow focus:outline-none focus:shadow-outline"
-        >Home</a
-      >
+      <div class="flex">
+        <!-- Download As link -->
+        <a
+          id="downloadAsA"
+          href="./tmp/<%= video.title %>.mp3"
+          id="downloadAs"
+          class="bg-white hover:bg-gray-100 text-gray-800 rounded-lg w-2/4 text-sm text-center font-semibold justify-center items-center flex mr-4 ml-0 m-auto py-2 px-2 border border-gray-400 shadow focus:outline-none focus:shadow-outline"
+          ><i
+            class="gg-spinner-two-alt mr-2"
+            style="opacity: 50%"
+            id="loadingIcon"
+          ></i>
+          <svg
+            id="downloadAsIcon"
+            class="w-5 h-5 mr-2 z-10"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+            />
+          </svg>
+          Download As</a
+        >
+        <!-- /Download As Link -->
 
+        <a
+          href="/"
+          class="bg-white hover:bg-gray-100 mr-0 text-gray-800 rounded-lg w-2/4 text-sm text-center font-semibold justify-center flex m-auto py-2 px-2 border border-gray-400 shadow focus:outline-none focus:shadow-outline"
+          >Home</a
+        >
+      </div>
       <!-- /Button with leading icon -->
     </div>
     <!-- /Card component -->
@@ -88,17 +119,38 @@
 
   const handleCompleted = () => {
     clearInterval(ping);
-    document.querySelector("#loadingIcon").style.display = "none";
+    document
+      .querySelectorAll("#loadingIcon")
+      .forEach((el) => (el.style.display = "none"));
     document.querySelector("#downloadLink").style.pointerEvents = "auto";
+    document.querySelector("#downloadAsA").style.pointerEvents = "auto";
     document.querySelector("#downloadIcon").style.display = "inline";
+    document.querySelector("#downloadAsIcon").style.display = "inline";
   };
+
+  document.querySelector("#downloadAsA").addEventListener("click", (e) => {
+    e.preventDefault();
+    const file = prompt("Download As .mp3");
+    if (!file) return;
+    const customA = document.createElement("a");
+    document.body.appendChild(customA);
+    customA.href = "./tmp/<%= video.title %>.mp3";
+    customA.download = file;
+    customA.click();
+  });
 </script>
 
 <style>
+  #downloadAsA {
+    pointer-events: none;
+  }
   #downloadIcon {
     display: none;
   }
   #downloadLink {
     pointer-events: none;
+  }
+  #downloadAsIcon {
+    display: none;
   }
 </style>
