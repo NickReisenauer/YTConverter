@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/tailwind.css" />
+    <link href="https://css.gg/spinner-two-alt.css" rel="stylesheet" />
     <title>Document</title>
   </head>
   <body>
@@ -40,11 +41,13 @@
       <!-- Button with leading icon-->
 
       <a
+        id="downloadLink"
         href="./tmp/<%= video.title %>.mp3"
         download
-        class="flex items-center px-4 py-2 mt-4 pl-3 w-full justify-center rounded-lg shadow-lg bg-indigo-600 text-white font-bold focus:outline-none focus:shadow-outline hover:bg-indigo-500 active:bg-indigo-700"
+        class="flex items-center px-4 py-2 mt-4 pl-3 w-full mb-6 justify-center rounded-lg shadow-lg bg-indigo-600 text-white font-bold focus:outline-none focus:shadow-outline hover:bg-indigo-500 active:bg-indigo-700"
       >
         <svg
+          id="downloadIcon"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
@@ -58,7 +61,13 @@
             d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
           />
         </svg>
+        <i class="gg-spinner-two-alt mr-2" id="loadingIcon"></i>
         Download</a
+      >
+      <a
+        href="/"
+        class="bg-white hover:bg-gray-100 text-gray-800 rounded-lg w-2/5 text-sm text-center font-semibold justify-center flex m-auto py-1 px-2 border border-gray-400 shadow focus:outline-none focus:shadow-outline"
+        >Home</a
       >
 
       <!-- /Button with leading icon -->
@@ -66,3 +75,30 @@
     <!-- /Card component -->
   </body>
 </html>
+
+<script>
+  const ping = setInterval(() => {
+    fetch("/download/<%= id %>/done")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        if (data.status) handleCompleted();
+      });
+  }, 1000);
+
+  const handleCompleted = () => {
+    clearInterval(ping);
+    document.querySelector("#loadingIcon").style.display = "none";
+    document.querySelector("#downloadLink").style.pointerEvents = "auto";
+    document.querySelector("#downloadIcon").style.display = "inline";
+  };
+</script>
+
+<style>
+  #downloadIcon {
+    display: none;
+  }
+  #downloadLink {
+    pointer-events: none;
+  }
+</style>
