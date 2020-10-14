@@ -1,12 +1,22 @@
 const removeRoute = require("remove-route-runtime");
 
-const createIdRoute = async (app, id) => {
-  await app.get(`/download/${id}/done`, (req, res) => {
+const createIdRouteFalse = (app, id) => {
+  app.get(`/download/${id}/done`, (req, res) => {
     res.json({ status: false });
   });
 };
 
+const createIdRouteTrue = (app, id) => {
+  app.get(`/download/${id}/done`, (req, res) => {
+    res.json({ status: true });
+  });
+};
+
 const deleteIdRoute = (app, id) => {
+  removeRoute(app, `/download/${id}/done`, "GET");
+};
+
+const deleteIdRouteTimeout = (app, id) => {
   app.get(`/download/${id}/done`, (req, res) => {
     res.json({ status: true });
   });
@@ -16,4 +26,9 @@ const deleteIdRoute = (app, id) => {
   }, 2500);
 };
 
-module.exports = { createIdRoute, deleteIdRoute };
+module.exports = {
+  createIdRouteFalse,
+  createIdRouteTrue,
+  deleteIdRoute,
+  deleteIdRouteTimeout,
+};

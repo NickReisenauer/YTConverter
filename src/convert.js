@@ -3,7 +3,7 @@ const ffmpegPath = require("@ffmpeg-installer/ffmpeg").path;
 const ffmpeg = require("fluent-ffmpeg");
 ffmpeg.setFfmpegPath(ffmpegPath);
 
-const convert = async (url, title, videoID) => {
+const convert = async (url, title, id) => {
   const promisifyCommand = (command) => {
     return new Promise((resolve, reject) => {
       command.on("end", resolve).on("error", reject).run();
@@ -15,8 +15,8 @@ const convert = async (url, title, videoID) => {
   });
 
   let ffmpegFunction = ffmpeg(stream)
-    .audioBitrate(128)
-    .save(`./public/tmp/${title}.mp3`);
+    .audioBitrate(192)
+    .save(`./public/tmp/${id}.mp3`);
   console.log("Started");
   await promisifyCommand(ffmpegFunction);
   console.log("Ended");
