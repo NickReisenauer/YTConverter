@@ -8,7 +8,11 @@ module.exports = {
     extend: {},
   },
   variants: {
-    backgroundColor: ["responsive", "hover", "focus", "active"],
+    backgroundColor: ["responsive", "hover", "focus", "active", "checked"],
   },
-  plugins: [require("tailwindcss"), require("autoprefixer")],
+  plugins: [
+    require("tailwindcss"),
+    require("autoprefixer"),
+    require("@tailwindcss/custom-forms"),
+  ],
 };

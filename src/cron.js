@@ -4,7 +4,7 @@ const findRemoveSync = require("find-remove");
 const cronjob = () => {
   cron.schedule("* * * * *", () => {
     findRemoveSync("./public/", {
-      age: { seconds: 1800 },
+      age: { seconds: 1500 },
       extensions: ".mp3",
     });
   });

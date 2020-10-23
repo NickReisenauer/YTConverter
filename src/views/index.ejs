@@ -53,6 +53,67 @@
             class="px-3 py-2 placeholder-gray-500 text-gray-700 shadow-sm relative rounded-lg text-md border border-rounded-sm border-gray-400 outline-none focus:outline-none focus:shadow-outline w-full pl-10"
           />
         </div>
+        <div class="flex justify-center">
+          <div class="flex items-center">
+            <label class="ml-2 flex items-center">
+              <input
+                type="radio"
+                name="radio"
+                value="mp3"
+                id="mp3"
+                required
+                class="form-radio text-indigo-600 mr-2"
+              />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                style="height: 22px; width: 22px"
+                class="mr-2 text-gray-700"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"
+                />
+              </svg>
+              <span class="font-bold text-gray-700">MP3</span></label
+            >
+
+            <span class="border-gray-400 border pb-2 ml-2 h-6"></span>
+
+            <label class="ml-2 flex items-center">
+              <input
+                type="radio"
+                name="radio"
+                value="mp4"
+                required
+                class="form-radio text-indigo-600 mr-2"
+              />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                style="height: 26px; width: 26px"
+                class="mr-2 text-gray-700"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.8"
+                  d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
+                />
+              </svg>
+              <span class="font-bold text-gray-700" id="mp4radio"
+                >MP4</span
+              ></label
+            >
+          </div>
+        </div>
+
         <!-- Button with leading icon-->
         <button
           type="submit"

@@ -42,7 +42,7 @@
 
       <a
         id="downloadLink"
-        href="./tmp/<%= video.userID %>.mp3"
+        href="./tmp/<%= video.userID %>.<%= video.type %> "
         download="<%= video.title %>"
         class="flex items-center px-4 py-2 mt-4 pl-3 w-full mb-5 justify-center rounded-lg shadow-lg bg-indigo-600 text-white font-bold focus:outline-none focus:shadow-outline hover:bg-indigo-500 active:bg-indigo-700"
       >
@@ -64,6 +64,7 @@
         <i class="gg-spinner-two-alt mr-2" id="loadingIcon"></i>
         Download</a
       >
+
       <div class="flex">
         <!-- Download As link -->
         <a
@@ -129,11 +130,11 @@
 
   document.querySelector("#downloadAsA").addEventListener("click", (e) => {
     e.preventDefault();
-    const file = prompt("Download As .mp3");
+    const file = prompt("Download As");
     if (!file) return;
     const customA = document.createElement("a");
     document.body.appendChild(customA);
-    customA.href = "./tmp/<%= video.userID %>.mp3";
+    customA.href = "./tmp/<%= video.userID %>.<%= video.type %>";
     customA.download = file;
     customA.click();
   });
