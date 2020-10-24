@@ -35,6 +35,8 @@ app.post("/download", async (req, res) => {
     type: req.body.radio,
   };
   res.render("download.ejs", { video, id });
+  console.log(req.body.radio);
+  console.log(req.body.quality);
 
   req.body.radio === "mp3"
     ? await convert(req.body.url, video.title, id)

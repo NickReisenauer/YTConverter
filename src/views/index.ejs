@@ -60,9 +60,9 @@
                 type="radio"
                 name="radio"
                 value="mp3"
-                id="mp3"
+                id="mp3radio"
                 required
-                class="form-radio text-indigo-600 mr-2"
+                class="form-radio text-indigo-600 mr-2 border-gray-600"
               />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -90,7 +90,8 @@
                 name="radio"
                 value="mp4"
                 required
-                class="form-radio text-indigo-600 mr-2"
+                id="mp4radio"
+                class="form-radio text-indigo-600 mr-2 border-gray-600"
               />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -112,6 +113,68 @@
               ></label
             >
           </div>
+        </div>
+
+        <!-- Border below type select -->
+        <div class="flex items-center justify-center">
+          <div class="w-2/3 border-gray-400 border-t-2 mt-2"></div>
+        </div>
+
+        <!-- MP3 Quality Selector Options -->
+        <div class="flex justify-center mt-2 items-center hide" id="mp3quality">
+          <label class="flex items-center mr-2 text-gray-700 font-medium">
+            <input
+              type="radio"
+              name="quality"
+              id=""
+              value="192"
+              required
+              class="form-radio text-indigo-600 border-gray-600 mr-2"
+            />
+            192Kbps
+          </label>
+
+          <!-- <span class="rounded-full bg-gray-500 h-1 w-1 mr-2"></span> -->
+          <!-- <p class="text-gray-400 mr-2 font-bold">/</p> -->
+
+          <label class="flex items-center text-gray-700 font-medium">
+            <input
+              type="radio"
+              name="quality"
+              id=""
+              value="320"
+              required
+              class="form-radio text-indigo-600 border-gray-600 mr-2"
+            />
+            320Kbps
+          </label>
+        </div>
+
+        <!-- MP4 Quality Selector -->
+        <div class="flex justify-center mt-2 items-center hide" id="mp4quality">
+          <label class="flex items-center mr-2 text-gray-700 font-medium">
+            <input
+              type="radio"
+              name="quality"
+              id=""
+              value="720"
+              required
+              class="form-radio text-indigo-600 border-gray-600 mr-2"
+            />
+            360p-720p
+          </label>
+
+          <label class="flex items-center text-gray-700 font-medium">
+            <input
+              type="radio"
+              name="quality"
+              id=""
+              required
+              value="1080"
+              class="form-radio text-indigo-600 border-gray-600 mr-2"
+            />
+            1080p
+          </label>
         </div>
 
         <!-- Button with leading icon-->

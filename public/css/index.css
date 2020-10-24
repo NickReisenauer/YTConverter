@@ -2,3 +2,7 @@
   transform: rotate(360deg);
   transition: all 1s;
 }
+
+.hide {
+  display: none;
+}

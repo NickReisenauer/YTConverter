@@ -8,6 +8,12 @@ const cronjob = () => {
       extensions: ".mp3",
     });
   });
+  cron.schedule("* * * * *", () => {
+    findRemoveSync("./public/", {
+      age: { seconds: 1500 },
+      extensions: ".mp4",
+    });
+  });
 };
 
 module.exports = cronjob;
