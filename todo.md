@@ -1,7 +1,3 @@
 # Todo
 
-- Purge TailwindCSS
-- Cron job for old files
-- Page transition
-- Save as `id`.mp3 to avoid errors of popular song
-- Error handling
+Choose between mp3 or mp4 and defaults are highest audio and highest video
