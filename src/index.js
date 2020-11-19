@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const ytdl = require("ytdl-core");
-const { convert, convertVideo } = require("./convert");
+const { convertQualityType } = require("./convert");
 const {
   createIdRouteFalse,
   createIdRouteTrue,
@@ -27,6 +27,7 @@ app.post("/download", async (req, res) => {
   createIdRouteFalse(app, id);
 
   const info = await ytdl.getBasicInfo(req.body.url);
+
   const video = {
     title: info.videoDetails.title,
     owner: info.videoDetails.ownerChannelName,
@@ -35,12 +36,8 @@ app.post("/download", async (req, res) => {
     type: req.body.radio,
   };
   res.render("download.ejs", { video, id });
-  console.log(req.body.radio);
-  console.log(req.body.quality);
 
-  req.body.radio === "mp3"
-    ? await convert(req.body.url, video.title, id)
-    : await convertVideo(req.body.url, id);
+  await convertQualityType(req.body.quality, req.body.radio, req.body.url, id);
 
   deleteIdRoute(app, id);
   createIdRouteTrue(app, id);
