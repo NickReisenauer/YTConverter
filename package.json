@@ -19,7 +19,7 @@
     "remove-route-runtime": "^1.0.1",
     "tailwindcss": "^1.8.10",
     "uuid-random": "^1.3.2",
-    "ytdl-core": "^3.4.2"
+    "ytdl-core": "^4.4.1"
   },
   "devDependencies": {
     "@tailwindcss/custom-forms": "^0.2.1"
